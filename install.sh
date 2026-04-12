@@ -14,7 +14,8 @@ fi
 "$HOME/.elan/bin/lake" --version || true
 
 # Symlink dotfiles
-ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
 
 # Install VS Code extensions
 code --install-extension leanprover.lean4
