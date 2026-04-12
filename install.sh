@@ -12,3 +12,9 @@ fi
 # Verify tools 
 "$HOME/.elan/bin/lean" --version || true 
 "$HOME/.elan/bin/lake" --version || true
+
+# Symlink dotfiles
+ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+
+# Install VS Code extensions
+code --install-extension leanprover.lean4
