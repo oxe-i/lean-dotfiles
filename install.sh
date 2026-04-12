@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-set -e 
+set -eu
 
 # Install elan (Lean toolchain manager) if missing 
 if [ ! -x "$HOME/.elan/bin/elan" ]; then 
@@ -18,4 +18,4 @@ DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
 
 # Install VS Code extensions
-code --install-extension leanprover.lean4
+code --install-extension leanprover.lean4 || true
