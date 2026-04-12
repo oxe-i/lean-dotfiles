@@ -20,3 +20,5 @@ ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
 # Install VS Code extensions
 apt update && apt install -y code || true
 code --install-extension leanprover.lean4 || true
+
+pip install pre-commit
