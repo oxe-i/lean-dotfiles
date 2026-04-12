@@ -3,11 +3,10 @@
 
 # Install elan (Lean toolchain manager) if missing 
 if [ ! -x "$HOME/.elan/bin/elan" ]; then 
-    curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y 
+    curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.29.0 \
+    && elan default leanprover/lean4:v4.29.0 \
+    && lean --version
 fi 
-
-# Ensure default Lean toolchain is installed 
-"$HOME/.elan/bin/elan" default stable 
 
 # Verify tools 
 "$HOME/.elan/bin/lean" --version || true 
