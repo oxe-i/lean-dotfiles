@@ -1,5 +1,6 @@
-#!/usr/bin/env bash set 
--e 
+#!/usr/bin/env bash 
+
+set -e 
 
 # Install elan (Lean toolchain manager) if missing 
 if [ ! -x "$HOME/.elan/bin/elan" ]; then 
