@@ -17,8 +17,7 @@ fi
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
 
-# Install VS Code extensions
-apt update && apt install -y code || true
-code --install-extension leanprover.lean4 || true
+# Install NASM, Make
+apt update && apt install -y make nasm gcc libc-dev || true
 
 pip install pre-commit
