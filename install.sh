@@ -19,8 +19,6 @@ ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
 
 # Install NASM, Make
 apt update && apt install -y make nasm gcc libc-dev software-properties-common || true
-add-apt-repository universe
-apt update
-apt install -y clang-format || true
+apt update && apt install -y clang-format || true
 
 pip install pre-commit
