@@ -13,12 +13,12 @@ fi
 "$HOME/.elan/bin/lean" --version || true 
 "$HOME/.elan/bin/lake" --version || true
 
-# Symlink dotfiles
-DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
-
 # Install NASM, Make
 apt update && apt install -y make nasm gcc libc-dev software-properties-common || true
 apt update && apt install -y clang-format || true
 
 pip install pre-commit
+
+# Symlink dotfiles
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ln -sf "$DOTFILES_DIR/.bashrc" ~/.bashrc
